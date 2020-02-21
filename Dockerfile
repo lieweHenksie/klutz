@@ -36,21 +36,6 @@ ADD .Renviron /root/.Renviron
 ADD installs.R /tmp/installs.R
 RUN Rscript /tmp/installs.R && rm /root/.Renviron
 
-
-# SET UP REDSHIFT ODBC ----
-RUN apt-get update && \
-  apt-get install -y \
-  python-pip \
-  odbc-postgresql
-  
-RUN apt-get install -y unixodbc unixodbc-dev --install-suggests
-
-# install and configure redshift odbc driver
-RUN wget https://redshift-downloads.s3.amazonaws.com/drivers/odbc/1.4.10.1000/AmazonRedshiftODBC-64-bit-1.4.10.1000-1.x86_64.deb && \
-  apt install ./AmazonRedshiftODBC-64-bit-1.4.10.1000-1.x86_64.deb && \
-  rm ./AmazonRedshiftODBC-64-bit-1.4.10.1000-1.x86_64.deb && \
-  printf '\n[Amazon Redshift (x64)]\nDriver=/opt/amazon/redshiftodbc/lib/64/libamazonredshiftodbc64.so' >> /etc/odbcinst.ini
-
 # SETUP RSTUDIO USER STUFF
 USER rstudio
 

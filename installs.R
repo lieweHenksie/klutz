@@ -3,17 +3,7 @@ devtools::install_url('https://cran.r-project.org/src/contrib/Archive/aws.s3/aws
 install.packages(
   c(
     'reticulate',
-    'png',
-    'odbc',
-    'here',
-    'tidymodels',
-    'tictoc',
-    'shiny',
-    'h2o',
-    'furrr',
-    'sparklyr',
-    'writexl',
-    'skimr' 
+    'tuneR' 
   )
 )
 
