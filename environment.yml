@@ -1,0 +1,25 @@
+name: base
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - pip
+  - jupyter
+  - jupyterlab
+  - numpy
+  - pandas
+  - pandas-profiling
+  - python=3.7
+  - scikit-learn
+  - seaborn
+  - statsmodels
+  - tsfresh
+  - psycopg2
+  - pip:
+      - pylint
+      - dask
+      - datatable
+      - sklearn
+      - boto3
+      - matplotlib
