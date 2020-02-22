@@ -5,7 +5,7 @@ This is a master Repo for all sound work.
 
 Project 1. 
 
-Neural Network that can take Southern African Birdsong and ID's said song. 
+Neural Network that can take Southern African Birdsong and ID said song. 
 
 
 
