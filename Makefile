@@ -1,10 +1,13 @@
 # get project path
 project_path := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
+
+
 # get path basename
 project := $(shell basename $$PWD)
 
 container_name=${project}-container
+image_name=dev_${project}
 
 build:
 	cp ~/.Renviron ./

@@ -8,8 +8,3 @@ install.packages(
 )
 
 devtools::install_github("tidyverse/tidyr")
-devtools::install_github(repo='jumo/des-jumoR@development',auth_token = Sys.getenv('GITHUB_PAT'))
-devtools::install_github(repo='jumo/des-hercules-r@development',auth_token = Sys.getenv('GITHUB_PAT'))
-
-
-sparklyr::spark_install()
