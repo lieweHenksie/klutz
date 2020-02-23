@@ -1,0 +1,40 @@
+# Setup
+
+```{r,echo=FALSE}
+library(tidyverse)
+library(tuneR)
+library(glue)
+library(here)
+library(h2o)
+library(furrr)
+
+h2o.init(nthreads = -1)
+
+h2o.no_progress()  # Disable progress bars for Rmd
+
+
+
+```
+
+
+# Analysis
+
+```{r}
+train_map <- read.csv('Train.csv')
+test_map <- read.csv('Test.csv')
+
+# tst <- readMP3(filename = paste0('Train/',"0009FW",'.mp3'))
+
+tbl_mp3 <- list.files(path = 'Train/',full.names = F,recursive = T) %>% 
+  enframe(name = NULL) %>% 
+  rename(ID=value) %>% 
+  mutate(ID = gsub(x = ID,pattern = '.mp3',replacement = "")) %>% 
+  left_join(train_map,by = "ID") %>% 
+  mutate(data = ID %>% future_map(wave2mat)) %>% 
+  rename()
+
+
+
+
+ ```
+
